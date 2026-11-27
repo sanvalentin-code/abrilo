@@ -149,6 +149,11 @@ function getImg(i){
   try { return localStorage.getItem("img"+i) || DEF; }  // 2° la subida desde el celu
   catch(e){ return DEF; }                // 3° la imagen por defecto
 }
+  function showImg(src){
+  var old=ph.querySelector("img");if(old)old.remove();
+  var s=ph.querySelector("span");
+  if(src){var im=new Image();im.src=src;ph.appendChild(im);s.style.display="none"}else{s.style.display=""}
+}
 function openCard(i){
   cur=i;var c=CARTAS[i];if(navigator.vibrate)navigator.vibrate(10);
   ttl.innerHTML=c.k+" "+c.t;
