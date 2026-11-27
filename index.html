@@ -112,7 +112,7 @@ var CARTAS = [
   "Me duele que estés mal, y me gustaría poder sacarte esa tristeza .",
   "llorá si lo necesitás que después de la tormenta siempre sale el sol, ahre .",
   "Sos muy fuerte vos podes wachi"]},
- {k:"Abrilo cuando",t:"estés <em>feliz</em>",img:"img/01.jpg",p:[
+ {k:"Abrilo cuando",t:"estés <em>feliz</em>",img:"felix.jpg",p:[
   "queria hacer uno para cuadno todo esta bien , casi todos son cuadno pasa algo malo",
   "Nose porque estas feliz pero espero que sea porque me viste jeeje.",
   "Disfruta tu dia y te amo"]},
@@ -120,7 +120,7 @@ var CARTAS = [
   "Mi amor no pasa nadaaa, no te pongas mal bebe",
   "Mi corazón tiene un solo nombre, y es el tuyo. Nadie ocupa tu lugar ni lo va a ocupar.",
   "Prefiero que lo hablemos  a que te lo guardes para vos sola."]},
- {k:"Abrilo cuando",t:"pienses que <em>te cambié por algo más</em>",img:"img/01.jpg",p:[
+ {k:"Abrilo cuando",t:"pienses que <em>te cambié por algo más</em>",img:"cambio.jpg",p:[
   "No hay nada, ni nadie, ni ningún plan que esté por encima de vos",
   "Si alguna vez parece que le doy más tiempo a otra cosa, avisame y lo hablamos. Nunca quiero que dudes de tu lugar en mi vida",
   "Vos no sos una opción. vos sos vos"]},
@@ -152,7 +152,7 @@ function getImg(i){
   function showImg(src){
   var old=ph.querySelector("img");if(old)old.remove();
   var s=ph.querySelector("span");
-  if(src){var im=new Image();im.src=src;ph.appendChild(im);s.style.display="none"}else{s.style.display=""}
+  if(src){var im=new Image();im.onerror=function(){im.src=DEF};im.src=src;;ph.appendChild(im);s.style.display="none"}else{s.style.display=""}
 }
 function openCard(i){
   cur=i;var c=CARTAS[i];if(navigator.vibrate)navigator.vibrate(10);
